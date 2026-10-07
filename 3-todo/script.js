@@ -23,8 +23,11 @@ function addTask() {
 }
 
 function toggleTask(id) {
+  console.log(id);
   const task = tasks.find((t) => t.id === id);
+  console.log(task);
   task.done = true;
+  console.log(task.done);
   render();
 }
 
@@ -53,7 +56,7 @@ function render() {
     const li = document.createElement("li");
     li.className = "task";
     if (task.done) {
-      li.classList.add("completed");
+      li.classList.add("done");
     }
 
     const span = document.createElement("span");
