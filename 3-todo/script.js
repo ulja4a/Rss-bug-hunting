@@ -23,9 +23,7 @@ function addTask() {
 }
 
 function toggleTask(id) {
-  console.log(id);
   const task = tasks.find((t) => t.id === id);
-  console.log(task);
   task.done = !task.done;
   render();
 }
@@ -41,6 +39,12 @@ function clearCompleted() {
 }
 
 function getVisibleTasks() {
+  if (currentFilter === "active") {
+    return tasks.filter((task) => !task.done);
+  } 
+  if (currentFilter === "completed") {
+    return tasks.filter((task) => task.done);
+  }  
   return tasks;
 }
 
