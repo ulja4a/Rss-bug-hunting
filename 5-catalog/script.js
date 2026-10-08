@@ -41,6 +41,7 @@ function getFiltered() {
 
 function render() {
   const items = getFiltered();
+  console.log(items);
   items.forEach((p) => {
     const card = document.createElement("div");
     card.className = "card";
@@ -57,3 +58,5 @@ sortSelect.addEventListener("change", render);
 resetBtn.addEventListener("click", () => {
   searchInput.value = "";
 });
+
+render();
