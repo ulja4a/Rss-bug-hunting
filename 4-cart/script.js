@@ -109,7 +109,11 @@ function renderCart() {
   }, 0) 
   badgeEl.textContent = totalQty;
   totalEl.textContent = total;
+  if (cart.length === 0) {
+  emptyMsg.hidden = false;
+} else {
   emptyMsg.hidden = true;
+}
 }
 
 promoBtn.addEventListener("click", applyPromo);
