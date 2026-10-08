@@ -35,13 +35,13 @@ function getFiltered() {
   } else if (sort === "desc") {
     result.sort((a, b) => a.price - b.price);
   }
-
+console.log(result);
   return result;
 }
 
 function render() {
   const items = getFiltered();
-  console.log(items);
+  grid.textContent = "";
   items.forEach((p) => {
     const card = document.createElement("div");
     card.className = "card";
